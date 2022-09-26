@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">ARM Robolox</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    //Application Tile
+    <string name="title">Arm Robolox</string>>
+
+    //Application Title Description
+    <string name="title_des">Security &amp; Notifier System</string>>
+
+    //Navigation Bar Title
+    <string name="envtemp">Environment Temperature</string>
+    <string name="firefighter">Fire Fighter</string>
+    <string name="police">Police Station</string>
+    <string name="ipcamera">IP Camera Access</string>
+    <string name="automation">Automation</string>
+
+
+    //Sms Viewer
+    <string name="sms_message"><![CDATA[ From : %1$s<br/>%2$s]]></string>
+    <string name="title_activity_robolox_io_t">RoboloxIoTActivity</string>
+
+    <string name="title_activity_robolox_iot_bannner">Arm Robolox IoT Automation</string>
+
+    //IoT server Status
+    <string name="iot_server_on">Arm Robolox not Connected to Server !</string>
+    <string name="iot_server_off">Arm Robolox is now Connected</string>
+    <string name="title_activity_robolox_weather_station_server">
+        RoboloxWeatherStationServerActivity
+    </string>
+    <string name="title_activity_defense_info_input">Defense Info</string>
+    <string name="title_activity_defense_info_list">DefenseInfoListActivity</string>
+    <string name="title_activity_defense_info_update">Defense Info</string>
+    <string name="title_activity_voice_instruction_list">Voice Instructions</string>
+
+    <!---Voice Instructions List-->
+
+    <string name="room_light_on_txt"><font color="#3f3f3f" size="17"><b>Instruction :</b></font> <font size="19"><i>room light on</i></font></string>
+
+    <string name="room_light_off_txt"><font color="#3f3f3f" size="17"><b>Instruction :</b></font>  <font size="19"><i>room light off</i></font></string>
+
+    <string name="garage_light_on_txt"><font color="#3f3f3f" size="17"><b>Instruction :</b></font> <font size="19"><i>garage light on</i></font></string>
+
+    <string name="garage_light_off_txt"><font color="#3f3f3f" size="17"><b>Instruction :</b></font> <font size="19"><i>garage light off</i></font></string>
+
+    <string name="fan_on_txt"><font color="#3f3f3f" size="17"><b>Instruction :</b></font> <font size="19"><i>fan on</i></font></string>
+
+    <string name="fan_off_txt"><font color="#3f3f3f" size="17"><b>Instruction :</b></font>  <font size="19"><i>fan of</i></font></string>
+    <string name="title_activity_splash">ARM Robolox</string>
+
+
+</resources>

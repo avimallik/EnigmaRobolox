@@ -1,0 +1,223 @@
+
+<!--
+  Author : Arunav Mallik Avi (Arm Avi)
+  Description : This is a JSON (Java Script Object Notation) based Sub Server of Robolox Weather Station where a NodeMCU Workstation server sends
+  the DHT11 Sensor's Real time Temparature and Humidity data to this Server as a JSON String then this server show them in HTML5 String
+  Department : Computer Science & Engineering (CSE), National University, Bangladesh
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	  <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="arunva mallik avi" content="armavi & RoboloxIoTweatherStation">
+	  <meta http-equiv="Access-Control-Allow-Origin" content="*">
+     
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+      <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+      <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+      <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+      <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+      <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+      <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+      <!--===============================================================================================-->
+          <link rel="stylesheet" type="text/css" href="css/util.css">
+          <link rel="stylesheet" type="text/css" href="css/main.css">
+ 
+      <title>Robolox Weather Station</title>
+
+    <style>
+    body, html {
+    height: 100%;
+    margin: 0;
+     }
+
+    .bg {
+    background-image: url("background.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     }
+
+     div.card {
+  width: 300px;
+  height: auto;
+  background-color: #289627;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+      }
+
+
+    div.container {
+    padding: none;
+     }
+
+    </style>
+
+ <!--IP Number WebStorage Holder-->
+    <script type="text/javascript">
+    // Check if the localStorage object exists
+       if(localStorage){
+          $(document).ready(function(){
+             $("#saveIP").click(function(){
+                // Get input name
+                 var ip = $("#ip").val();
+                
+                // Store data
+                 localStorage.setItem("internet_protocol_number_5689", ip);
+                 alert("Robolox Weather Station IP is Save");
+              });
+              $("#loadIP").click(function(){
+                // Retrieve data
+                 $("#ip").val(localStorage.getItem("internet_protocol_number_5689"));
+              });
+            });
+        } else{
+           alert("Sorry, your browser do not support local storage.");
+        }
+    </script>
+
+  </head>
+
+
+    <body>
+
+    <div class="bg">
+        
+        <br>
+        <div class="container-fluid">
+            <div class="center-block">
+            <p style="text-align:center;padding:none;font-size:20px;color:rgb(94, 94, 94)"><img src="weather.png" style="width:70px;height:70px;"/> <b>Robolox Weather Station</b></p>
+            </div>
+        </div>
+
+
+        <br>
+               
+        <div class="container">
+            <div class="wrap-input1 validate-input" data-validate = "IP is required">
+                <input class="input1" type="text" name="name" placeholder="Enter Server IP Address" style="text-align:center;font-size:15px" id="ip">
+                 <span class="shadow-input1"></span>
+            </div>
+        </div>
+
+    <div class="container-fluid">
+            <div class="center-block">
+            <center>
+                <button type="button" class="btn btn-primary" id = "saveIP"><b><font size = "2pt">Save IP</font></b></button>
+                <button type="button" class="btn btn-success" id = "loadIP"><b><font size = "2pt">Load IP</font></b></button> 
+             </center>
+        </div>
+    </div>
+             
+        <br><br>
+                 
+    <!--Robolox Data Visualization--> 
+      
+            <b>
+            <!--Temparature Analytics String-->
+            <p style = 'line-height: 60px;font-family: Helvetica;color: rgb(255, 255, 255);font-size: 40px;text-align:center' id="temperature">
+                <img src = "temparature.png" style="width:60px;height:50px;"> 00.00 <font color="#d60c0c">*C</font>
+            </p>
+
+
+            <br>
+            <!--Humidity Analytics String-->
+            <p style = 'line-height: 60px;font-family: Helvetica;color: rgb(255, 255, 255);font-size: 40px;text-align:center' id="humidity">
+              <img src = "humidity.png" style="width:50px;height:50px;"> 00.00 <font color="#289627">%</font>
+            </p>
+
+            </b>
+
+            <br><br>
+            <div class="container">
+                <center>
+            <div class="card" id = "card">
+                    <div class="header">
+                      <h1 style="padding:9px;font-size:14px;color:white" id = "status"><b>Status</b></h1>
+                    </div>
+                  
+                  </div>
+                  </center>
+
+                  <br><br>
+                  <p style="text-align:center;color:rgb(94, 94, 94);padding: 8px;font-size:15px"><b>Temparature & Humidity Analytics <b></p>
+                  </div>
+
+
+           
+
+        </div>
+        
+
+    <!--Robolox Weather Data Analytics JavaScript Function-->
+    <script>
+        window.onload = function() {
+            loaddata();
+        };
+        function loaddata(){
+                var ip = document.getElementById('ip').value;
+                var url = "http://"+ ip + "/data"
+                $.getJSON(url, function(data) {
+                    var val= data;
+                    var humid=data['Humidity'];
+                    var temper=data['temperature'];
+                    document.getElementById("temperature").innerHTML = "<img src = 'temparature.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  " + temper +" "+"<font color='#d60c0c'>*C</font>";
+                    document.getElementById("humidity").innerHTML = "<img src = 'humidity.png' height=\"60px\" width=\"60px\" style='vertical-align: middle' />  "+ humid +" "+"<font color='#289627'>%</font>";
+                    //console.log(data['Humidity']);
+                    if(temper >= 0 && temper <=25){
+                      document.getElementById("status").innerHTML = "COOL Temperature and Humidity";
+                      document.getElementById("card").style.backgroundColor = "#f3f3f3";
+                    }else if(temper >= 26 && temper <= 30){
+                      document.getElementById("status").innerHTML = "Moderate COOL Temperature and Humidity";
+                    }else if(temper >= 31 && temper <= 35){
+                      document.getElementById("status").innerHTML = "Little HOT Temperature and Humidity";
+                    }else if(temper >= 36 && temper <= 43){
+                      document.getElementById("status").innerHTML = "Moderate HOT Temperature and Humidity";
+                    }else if(temper >= 44 && temper <= 60){
+                      document.getElementById("status").innerHTML = "Very HOT Temperature and Humidity";
+                    }else if(temper >= 61){
+                      document.getElementById("status").innerHTML = "Extremely HOT Temperature and Humidity, Please Check the System";
+                    }
+                });
+            
+        }
+        window.setInterval(function(){
+        loaddata();
+            }, 2000);
+    
+    </script>
+
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>

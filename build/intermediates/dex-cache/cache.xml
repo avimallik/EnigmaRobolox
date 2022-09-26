@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="D:\Research_Properties\Arm Robolox Resource Files\EnigmaRobolox\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="223a3380d03b74ac085b52c5aee0cc9a7bf692f2">
+        <dex dex="D:\Research_Properties\Arm Robolox Resource Files\EnigmaRobolox\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_4e514c081c33261891ef21cf2225f5ad37706408\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Research_Properties\Arm Robolox Resource Files\EnigmaRobolox\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\Research_Properties\Arm Robolox Resource Files\EnigmaRobolox\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_296c81adebe1eba33032eb571f48b41db27049c8\classes.dex" />
+    </item>
+
+</items>
