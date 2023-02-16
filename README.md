@@ -6,4 +6,4 @@ ARM Robolox is an Android application built for IoT-enabled deployment. This sop
 1. Support Google Sepech Recognition API to control home appliances through voice command
 2. Capable to read DHT-11 real-time weather data, such as temperature, humidity & heat index as a JSON Array.
 3. End-To-End data transaction through Volley between the application and the IoT Platform web server (Web server of NodeMCU-ESP8266 MOD)
-4. capable of storing information about local defense teams such as police, fire, and hospitals.
+4. Capable of storing information about local defense teams such as police, fire, and hospitals.
