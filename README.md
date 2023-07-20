@@ -9,7 +9,7 @@ ARM Robolox is an Android application built for IoT-enabled deployment. This sop
 4. Capable of storing information about local defense teams such as police, fire, and hospitals.
 5. Provide an alarm if the threshold value is less than the current temperature of DHT-11 sensor. </br>
 
-<b>Some UI operations depicting in following figures<b>
+<b>Some UI operations depicting in the following figures<b>
   
 ![Screenshot_20180919-130700](https://user-images.githubusercontent.com/21225215/219436814-6823dfae-2cdd-4380-8119-53ddf49f7b0e.png)
 ![Screenshot_20180922-203138](https://user-images.githubusercontent.com/21225215/219436829-0d974020-a6b4-4c57-a46e-235004101966.png)
