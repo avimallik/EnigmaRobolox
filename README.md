@@ -25,7 +25,11 @@ EngimaRobolox or ARM Robolox is an Android application built for IoT-enabled dep
   See the full list of supported voice commands and instructions.
 
 ---
+## Useful Links
 
+- **Weather Monitoring Source:**  
+[DHT-11 weather monitoring through ESP8266MOD/NodeMCU](https://github.com/avimallik/IoT-Home-weather-monitoring-system-NodeMCU-ESP-8266MOD-Code.git)
+---
 ## How to Use
 
 1. **Clone or download** the project and open it in Android Studio.
