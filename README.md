@@ -25,6 +25,9 @@ EngimaRobolox or ARM Robolox is an Android application built for IoT-enabled dep
   See the full list of supported voice commands and instructions.
 
 ---
+## System Architecture
+![Dashboard](https://github.com/user-attachments/assets/a2843560-2239-45ec-9629-6fc7cadbaf67)
+---
 ## Useful Links
 
 - **Weather Monitoring Source:**  
